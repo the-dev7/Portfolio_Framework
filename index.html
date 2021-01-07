@@ -1,0 +1,1231 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Portfolio - Framework</title>
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --bg-color: rgb(10, 10, 10);
+  --text-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+}
+
+html
+{
+  scroll-behavior: smooth;
+}
+
+body
+{
+  margin: 0 0;
+  padding: 0 0;
+  font-family: Roboto;
+  transition: 0.4s;
+  background-color: rgba(5,5,5,1);
+}
+
+.w3-bar
+{
+  box-shadow: 0 5px 15px rgba(40, 40, 40, 0);
+}
+
+.w3-bar a
+{
+  text-decoration: none;
+  font-family: Bebas Neue;
+  font-size: 1.5em;
+  padding: 0 0.2em;
+  color: rgba(180,180,180,1);
+}
+
+.the_links li
+{
+  display: inline-block;
+}
+
+.link
+{
+  position: relative;
+}
+
+.lnk:before
+{
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 2px;
+    bottom: 0;
+    left: 5px;
+    background-color: #FFF;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.lnk:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.lnk_active:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.lnk:hover, .lnk_active
+{
+  color: white;
+  opacity: 1;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#logo
+{
+  font-family: Monoton;
+  font-size: 1.8em;
+}
+
+.topleft
+{
+  background-image: linear-gradient(
+      90deg,
+      rgba(10, 10, 10, 0.1),
+      rgb(10, 10, 10, 0.5)
+    ),
+    url("res/avatar.jpeg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+}
+
+.topright
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(8,8,8,1);
+  width: 50%;
+  height: 100%;
+  border-left: 100px solid rgb(5, 5, 5, 1);
+  border-bottom: 100vh solid transparent;
+}
+
+.topright_content
+{
+  margin-top: 100vh;
+}
+
+/*
+.headline
+{
+  position: absolute;
+  margin-top: 40vh;
+  margin-left: 3vw;
+}
+
+.introwords
+{
+  position: absolute;
+  margin-top: 45vh;
+  margin-left: 6vw;
+}
+*/
+.w3-bar
+{
+  color: white;
+}
+
+.headline
+{
+  text-transform: uppercase;
+  font-family: 'Roboto';
+  /*font-size: 40px;*/
+  color: white;
+}
+
+.headline span
+{
+  text-transform: uppercase;
+  font-family: 'Monoton';
+  /*font-size: 1em;*/
+}
+
+.headline span span
+{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.introwords
+{
+  font-family: "Big Shoulders Stencil Text";
+  font-size: 2em;
+  color: white;
+}
+
+.introwords i
+{
+  position: relative;
+  bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.about_holder
+{
+  background: rgba(4,4,4,1);
+}
+
+.ab_bd
+{
+  margin: auto;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  padding: 5vh 5vw;
+  width: 50%;
+  background: rgba(10,10,10,0.6);
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0px 5px 15px rgba(200,200,200,0.15);
+}
+
+#skill
+{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 10vh 0;
+}
+
+#skill h1
+{
+  font-family: Monoton;
+}
+
+.holder
+{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+.circle_container
+{
+  padding: 0.5vw 2vw;
+  /*border: 1px solid red;*/
+}
+
+.circle h3
+{
+  margin-top: -15px;
+  font-weight: bold;
+  font-family: Roboto;
+  font-size: 1.3em;
+}
+
+.circle
+{
+  position: relative;
+  width: 14.5em;
+  height: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(30,30,30,0.2);
+  color: white;
+  box-shadow: 0 20px 25px rgba(200, 200, 200, 0.10);
+  border-radius: 5px;
+}
+
+.circle .percent1, .percent2, .percent3, .percent4, .percent5, .percent6
+{
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.circle svg
+{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotateZ(-90deg);
+}
+
+.circle svg circle
+{
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 7;
+  stroke: #fff;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  stroke-linecap: round;
+}
+
+.circle svg circle:nth-child(1)
+{
+  stroke-dashoffset: 0;
+  stroke: #303030;
+}
+
+.circle .percent1 svg circle:nth-child(2)
+{
+  stroke-dashoffset: calc(440 - (440 * 88)/100);
+  stroke: white;
+}
+
+.circle .percent2 svg circle:nth-child(2)
+{
+  stroke-dashoffset: calc(440 - (440 * 95)/100);
+  stroke: white;
+}
+
+.circle .percent3 svg circle:nth-child(2)
+{
+  stroke-dashoffset: calc(440 - (440 * 75)/100);
+  stroke: white;
+}
+
+.circle .percent4 svg circle:nth-child(2)
+{
+  stroke-dashoffset: calc(440 - (440 * 85)/100);
+  stroke: white;
+}
+
+.circle .percent5 svg circle:nth-child(2)
+{
+  stroke-dashoffset: calc(440 - (440 * 67)/100);
+  stroke: white;
+}
+
+.circle .percent6 svg circle:nth-child(2)
+{
+  stroke-dashoffset: calc(440 - (440 * 70)/100);
+  stroke: white;
+}
+
+.circle .number
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.circle h2
+{
+  font-size: 48px;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+.circle h2 span
+{
+  font-size: 24px;
+  margin-left: 0.2em;
+  font-family: 'Roboto';
+}
+
+
+
+.project_container
+{
+  background-color: rgba(5,5,5,1);
+  height: 100%;
+}
+
+.slideshow-container {
+  width: 95vw;
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.proj_head
+{
+  text-align: center;
+  padding: 2em 0;
+  font-size: 2em;
+  font-family: Monoton;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  background-color: rgba(25, 25, 25, 0.4);
+  color: white;
+  box-shadow: 0 15px 25px rgba(200, 200, 200, 0.3);
+}
+
+.mySlides header
+{
+  font-family: Big Shoulders Stencil Text;
+  letter-spacing: 0.1em;
+}
+
+.card_holder
+{
+  display: flex;
+}
+
+.card_holder img
+{
+  width: 30%;
+  height: 40%;
+  padding: 1em 1em;
+}
+
+.card_holder .w3-medium
+{
+  overflow-y: scroll;
+}
+
+.card_holder .w3-medium
+{
+  padding: 0 1em;
+}
+
+/* Next & previous buttons */
+
+.prev {
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  margin: 0 2em;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  margin: 0 2em;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(20,20,20,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgba(30,30,30,1);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: rgba(200,200,200,1);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+@media (max-width: 430px)
+{
+  .holder
+  {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.contact_container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom_left
+{
+  width: 55%;
+  height: 100%;
+
+  background-image: linear-gradient(
+      0deg,
+      rgba(10, 10, 10, 0.5),
+      rgba(30, 30, 30, 1)
+    ),
+    url("res/music_lp.jpg");
+
+  background-size: auto;
+  /*filter: grayscale(1);*/
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  border-top: 100vh solid transparent;
+  border-right: 100px solid rgba(10,10,10,1);
+}
+
+.bottom_right
+{
+  width: 45%;
+  height: 100%;
+  background-color: rgba(10,10,10,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(230,230,230,1);
+}
+
+.socials_container
+{
+  position: absolute;
+  margin-top: 3.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials_container i
+{
+  margin: 0 0.3em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.socials_container i:nth-child(3):hover
+{
+  color: rgba(82, 82, 82, 1);
+}
+
+.socials_container i:nth-child(1):hover
+{
+  color: rgba(65, 167, 245, 1);
+}
+
+.socials_container i:nth-child(2):hover
+{
+  color: #f100ff;
+}
+
+.socials_container i:nth-child(4):hover
+{
+  color: rgba(2, 71, 230, 1);
+}
+
+/* mobile responsive code [for minute corrections] */
+
+@media (max-width: 770px)
+{
+
+  .w3-top
+  {
+    background-color: rgba(1, 1, 1, 0.5);
+  }
+
+  .lg
+  {
+    padding-top: 1vw;
+  }
+
+  .resp_head
+  {
+    width: 100%;
+    height: 100%;
+    padding-right: 1vw;
+
+    background-image: linear-gradient(
+        90deg,
+        rgba(10, 10, 10, 0.7),
+        rgb(1, 1, 1, 1)
+      ),
+      url("res/avatar.jpeg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .resp_head i
+  {
+
+  }
+
+
+  .card_holder
+  {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  }
+
+  .card_holder img
+  {
+    width: 50%;
+  }
+
+}
+
+@media (max-width: 430px)
+{
+    body
+    {
+      margin: 0 auto;
+    }
+
+    .w3-top
+    {
+      background-color: black;
+      padding-bottom: 1em;
+    }
+
+    .lg
+    {
+      margin-top: 0.7em;
+    }
+
+    .w3-sidebar a
+    {
+      font-family: Big Shoulders Stencil Text;
+      font-size: 2em;
+    }
+
+    .resp_head
+    {
+      width: 100%;
+      height: 100%;
+      padding-right: 1vw;
+
+      background-image: linear-gradient(
+          90deg,
+          rgba(10, 10, 10, 0.7),
+          rgb(1, 1, 1, 1)
+        ),
+        url("res/avatar.jpeg");
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .resp_head .dwa
+    {
+      padding-left:  5vw;
+    }
+
+    .ab_bd
+    {
+      width: 100vw;
+    }
+
+    .main_holder
+    {
+      width: 100vw;
+    }
+
+    .mob_proj_container
+    {
+      width: 100%;
+      text-align: center;
+    }
+
+    .proj_card
+    {
+      width: 100vw;
+      padding: 1em 1em;
+      background-color: rgba(15, 15, 15, 0.4);
+      color: white;
+      box-shadow: 0 15px 25px rgba(100, 100, 100, 0.3);
+    }
+
+    .proj_head
+    {
+      width: 100vw;
+    }
+
+    .proj_card img
+    {
+      height: 30%;
+    }
+
+    .proj_card header
+    {
+      font-family: Big Shoulders Stencil Text;
+    }
+
+    .mob_contact
+    {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+          90deg,
+          rgba(10, 10, 10, 0.7),
+          rgb(1, 1, 1, 1)
+        ),
+        url("res/music_2.jpg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .cont_holder
+    {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+
+
+    .main_holder h1
+    {
+      width: 100vw;
+      padding: 2em 0;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-card" id="myNavbar">
+    <span class="lg w3-bar-item w3-wide w3-hide-small w3-hide-medium" style="letter-spacing: 0px; padding-top: 0.9vw;" id="logo">PORTFOLIO</span>
+    <span class="lg w3-bar-item w3-wide w3-hide-large" style="letter-spacing: 0px;" id="logo">PORTFOLIO</span>
+  <!--  <a href="#home" class="lg w3-bar-item w3-wide w3-hide-large" style="letter-spacing: 0px; font-size: 20px;" id="logo">STTC, Pandu</a> -->
+    <!-- <a href="#home" class="w3-bar-item w3-wide w3-hide-medium w3-hide-large" style="letter-spacing: 0px; font-size: 20px; color: black;" id="logo"><img src="res/logo.png" width="55" height="55" style="margin-right: 5px;">STTC, Pandu</a>-->
+    <div class="w3-right w3-hide-small" style="letter-spacing: 0px; padding-top: 0; padding-right: 2vw;">
+      <ul class="the_links" id="nav_link">
+      <li class="link"><a href="#about"><span class="lnk">ABOUT</span></a></li>
+      <li class="link"><a href="#skills"><span class="lnk">SKILLS</span></a></li>
+      <li class="link"><a href="#projects"><span class="lnk">PROJECTS</span></a></li>
+      <li class="link"><a href="#contact"><span class="lnk">CONTACT</span></a></li>
+      </ul>
+    </div>
+
+   <a href="javascript:void(0)" style="margin-top: 27px; margin-right: 20px;" class="menu w3-bar-item w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+     <i class="fa fa-bars" style="font-size: 20px;"></i>
+   </a>
+  </div>
+</div>
+
+<!-- for mobile devices -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none; text-align: center;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="btn w3-bar-item w3-button w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#skills" onclick="w3_close()" class="w3-bar-item w3-button">SKILLS</a>
+  <a href="#project" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
+  <a href="#ct" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<div class="main-holder w3-hide-medium w3-hide-small">
+  <div class="topleft w3-left">
+  </div>
+  <div class="topright w3-right">
+    <div class="topright_content w3-center">
+      <span class="headline w3-xxlarge"><span>Abhinandan <span></span> Deb</span></span>
+      <br><br>
+      <span class="introwords w3-xlarge">UI/UX<i class="fas fa-circle"></i>BACKEND<i class="fas fa-circle"></i>IoT<i class="fas fa-circle"></i>ML<i class="fas fa-circle"></i>MUSIC</span>
+      <i class="fas fa-chevron-down w3-display-bottommiddle w3-xlarge w3-text-white" style="margin-bottom: 7vh;"></i>
+  </div>
+  </div>
+</div>
+
+<div class="resp_head w3-container w3-hide-large">
+  <div class="resp_holder">
+    <span class="headline w3-xxlarge"><span>Abhinandan <span></span> Deb</span></span>
+    <br><br>
+    <span class="introwords w3-xlarge">UI/UX<i class="fas fa-circle"></i>BACKEND<i class="fas fa-circle"></i>IoT<i class="fas fa-circle"></i>ML<i class="fas fa-circle"></i>MUSIC</span>
+    <i class="dwa fas fa-chevron-down w3-display-bottommiddle w3-xlarge w3-text-white" style="margin-bottom: 7vh;"></i>
+  </div>
+</div>
+
+<div class="about_holder w3-container">
+  <br id="about">
+  <div class="ab_bd w3-card">
+    <h2 class="w3-center w3-xxlarge" style="font-family: Monoton">ABOUT</h2>
+    <br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nulla justo, viverra in enim a, semper auctor nulla. Nam sed libero vitae ipsum faucibus aliquet eget non sapien. Pellentesque porta tortor tincidunt magna suscipit, sollicitudin convallis erat blandit. Maecenas faucibus consectetur dui, sit amet ultrices nisi interdum vel. Sed non augue elementum, rhoncus turpis vitae, vestibulum est. Maecenas lacinia nunc at justo feugiat aliquam. Cras dolor elit, hendrerit sit amet ante id, pellentesque lacinia metus. Aliquam sapien augue, feugiat eget varius nec, iaculis egestas dui.
+      <br><br>
+Nunc vitae justo nec quam finibus lacinia. Ut erat metus, ullamcorper sed urna quis, congue viverra mi.
+  </div>
+  <br>
+</div>
+
+<div class="main_holder w3-container" id="skills">
+  <br id="skills">
+  <div id="skill">
+    <h1>Skills</h1>
+
+    <div class="main_holder">
+      <div class="holder">
+      <!-- This is just to hold the progress circle -->
+      <div class="circle_container">
+        <div class="circle">
+          <h3>Programming</h3>
+          <br>
+          <div class="percent1">
+            <svg>
+              <circle cx = "70" cy = "70" r = "70"></circle>
+              <circle cx = "70" cy = "70" r = "70"></circle>
+            </svg>
+
+            <div class="number">
+              <h2>88<span>%</span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="circle_container">
+        <div class="circle">
+          <h3>Web Development</h3>
+          <br>
+          <div class="percent2">
+            <svg>
+              <circle cx = "70" cy = "70" r = "70"></circle>
+              <circle cx = "70" cy = "70" r = "70"></circle>
+            </svg>
+
+            <div class="number">
+              <h2>95<span>%</span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="circle_container">
+        <div class="circle">
+          <h3>IoT Hardware Design</h3>
+          <br>
+          <div class="percent3">
+            <svg>
+              <circle cx = "70" cy = "70" r = "70"></circle>
+              <circle cx = "70" cy = "70" r = "70"></circle>
+            </svg>
+
+            <div class="number">
+              <h2>75<span>%</span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+      <div class="holder">
+        <!-- This is just to hold the progress circle -->
+        <div class="circle_container">
+          <div class="circle">
+            <h3>Music Production</h3>
+            <br>
+            <div class="percent4">
+              <svg>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+              </svg>
+
+              <div class="number">
+                <h2>85<span>%</span></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="circle_container">
+          <div class="circle">
+            <h3>Backend Development</h3>
+            <br>
+            <div class="percent5">
+              <svg>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+              </svg>
+
+              <div class="number">
+                <h2>67<span>%</span></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="circle_container">
+          <div class="circle">
+            <h3 class="w3-center">Photoshop</h3>
+            <br>
+            <div class="percent6">
+              <svg>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+                <circle cx = "70" cy = "70" r = "70"></circle>
+              </svg>
+
+              <div class="number">
+                <h2>70<span>%</span></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<!-- Slideshow container -->
+<div class="project_container w3-hide-small" id="projects">
+<header class="proj_head w3-container" style="color: white;">PROJECTS</header>
+<div class="slideshow-container w3-center w3-padding-large w3-mobile">
+  <a class="prev w3-left" onclick="plusSlides(-1)">&#10094;</a>
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade w3-card w3-round-large w3-padding-small">
+    <header class="w3-xlarge"><p>Deep Learning</p></header>
+    <div class="card_holder">
+      <img src="res/ai_2.jpg" alt="">
+      <div class="w3-medium" style="text-align: justify;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+        </p>
+        <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mySlides fade w3-card w3-round-large w3-padding-small">
+    <header class="w3-xlarge"><p>Arduino IoT</p></header>
+    <div class="card_holder">
+      <img src="res/arduino_2.jpg" alt="">
+      <div class="w3-medium" style="text-align: justify;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+        </p>
+        <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mySlides fade w3-card w3-round-large w3-padding-small">
+    <header class="w3-xlarge"><p>Music</p></header>
+    <div class="card_holder">
+      <img src="res/music_2.jpg" alt="">
+      <div class="w3-medium" style="text-align: justify;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+        </p>
+        <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mySlides fade w3-card w3-round-large w3-padding-small">
+    <header class="w3-xlarge"><p>UI/UX</p></header>
+    <div class="card_holder">
+      <img src="res/ux_ui.jpg" alt="">
+      <div class="w3-medium" style="text-align: justify;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+        </p>
+        <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next and previous buttons -->
+    <a class="next w3-right" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+</div>
+
+<!-- mobile view project section -->
+<div class="mob_proj_container w3-container w3-hide-medium w3-hide-large" id="project">
+  <br><br><br>
+  <header class="proj_head w3-container" style="color: white;">PROJECTS</header>
+
+  <br>
+
+  <div class="proj_card w3-card">
+    <img src="res/ai_2.jpg" alt="">
+    <header class="w3-xlarge"><p>Deep Learning</p></header>
+    <div class="w3-medium" style="text-align: justify;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+      </p>
+      <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+
+  <div class="proj_card w3-card">
+    <img src="res/arduino_2.jpg" alt="">
+    <header class="w3-xlarge"><p>Arduino IoT</p></header>
+    <div class="w3-medium" style="text-align: justify;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+      </p>
+      <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+
+  <div class="proj_card w3-card">
+    <img src="res/music_2.jpg" alt="">
+    <header class="w3-xlarge"><p>Music</p></header>
+    <div class="w3-medium" style="text-align: justify;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+      </p>
+      <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+
+  <div class="proj_card w3-card">
+    <img src="res/ux_ui.jpg" alt="">
+    <header class="w3-xlarge"><p>UI/UX</p></header>
+    <div class="w3-medium" style="text-align: justify;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum vulputate magna, sit amet maximus ipsum consequat sed. Donec facilisis, quam non cursus luctus, eros nunc ullamcorper nunc, nec condimentum velit nisi eleifend nibh. Praesent dictum vel risus eget dapibus.
+      </p>
+      <p>Sed convallis consequat risus, vel vulputate enim consectetur at. Sed aliquet imperdiet dignissim. Fusce in varius sem. Nam posuere neque ultricies, tincidunt tellus ac, vehicula mauris. Maecenas eu ornare enim.</p>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+
+</div>
+
+
+<div class="contact_container w3-hide-small" id="contact">
+  <div class="bottom_left"></div>
+  <div class="bottom_right w3-center">
+    <header class="w3-xxxlarge" style="font-family: Big Shoulders Stencil Text">GET IN TOUCH</header>
+    <br><br>
+    <div class="socials_container w3-xxlarge">
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-github"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</div>
+
+<div class="mob_contact w3-container w3-hide-large w3-hide-medium" id="ct">
+  <div class="cont_holder w3-card w3-center">
+    <header class="w3-xxxlarge" style="font-family: Big Shoulders Stencil Text">GET IN TOUCH</header>
+    <br><br>
+    <div class="socials_container w3-xxlarge">
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-github"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</div>
+
+<script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+
+var navs = document.getElementById("nav_link");
+var nav_links = navs.getElementsByClassName("lnk");
+
+for (var i=0;i < nav_links.length; i++)
+{
+  nav_links[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("lnk_active");
+
+    // since initially no class is lnk_active, we search this thing separately
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" lnk_active", "");
+    }
+
+    this.className += " lnk_active";
+});
+}
+
+
+// js for the sidebar [mobile view]
+
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+if (mySidebar.style.display === 'block') {
+  mySidebar.style.display = 'none';
+} else {
+  mySidebar.style.display = 'block';
+}
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+}
+
+function coursesMenu(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Open and close sidebar
+function nws_open() {
+  document.getElementById("nwzbar").style.width = "100%";
+  document.getElementById("nwzbar").style.display = "block";
+}
+
+function nws_close() {
+  document.getElementById("nwzbar").style.display = "none";
+}
+
+
+</script>
+
+</body>
+</html>
